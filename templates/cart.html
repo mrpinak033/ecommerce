@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table border="1" style="background-color: silver">
+    <tr>
+        <th>id</th>
+        <th>pid</th>
+        <th>qty</th>
+        <th>unitprice</th>
+        <th>tuprice</th>
+    </tr>
+    {% for rec in x %}
+    <tr>
+        <td>{{ rec.id }}</td>
+        <td>{{ rec.pid }}</td>
+        <td>{{ rec.units }}</td>
+        <td>{{ rec.unitprice }}</td>
+        <td>{{ rec.tuprice }}</td>
+        <td><button style="background-color:darkred"><a href="http://127.0.0.1:8000/cart/deletecart?id={{ rec.id }}&pid={{ rec.pid }}&units={{ rec.units }}">Delete Qty</a></button></td>
+        <td><button><a href="http://127.0.0.1:8000/cartapp/modifycart?id={{ rec.id }}&pid={{ rec.pid }}&oqt={{ rec.units }}">Modify qty</a> </button></td>
+        <td><button><a href="http://127.0.0.1:8000/registration/order?id={{ rec.id }}&tup={{ tp }}">Checkout </a> </button></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
+

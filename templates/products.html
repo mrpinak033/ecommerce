@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+<table border="1">
+<tr >
+    <th>pid</th>
+    <th>pname</th>
+    <th>pcost</th>
+    <th>pmfdt</th>
+    <th>pexpdt</th>
+    <th>pdis</th>
+</tr>
+{% for rec in recs %}
+<tr>
+    <td>{{ rec.pid }}</td>
+    <td>{{ rec.pname }}</td>
+    <td>{{ rec.pcost }}</td>
+    <td>{{ rec.pmfdt }}</td>
+    <td>{{ rec.pexpdt }}</td>
+    <td>{{ rec.pdis }}</td>
+    <td>
+        <a href="/cart/addcart?pid={{rec.pid}}">add to cart</a>
+    </td>
+
+
+</tr>
+{% endfor %}
+</table>
+ </body>
+</html>
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#adff2f">
+<form action="otpvalidation" method="post">
+    {% csrf_token %}
+   Enter otp: <input type="number" name="otp"><br>
+    <input type="submit" value="send">
+    <li><a href="http://localhost:8000/authapp/login/">signin</a></li>
+</form>
+</body>
+</html>
+

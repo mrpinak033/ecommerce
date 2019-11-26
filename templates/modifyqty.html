@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modified Cart</title>
+</head>
+<body>
+<form action=" http://127.0.0.1:8000/cart/modifiedcart">
+    id:<input type="text" value={{ cartidid }} name="cid">
+    pid: <input type="text" value={{ pid }} name="pid"><br>
+    old qty: <input type="text" value="{{ oq }}" name="oldqty"><br>
+    select new quantity: <select name="nqt">
+    {% for rec in qtt %}
+    <option value="{{ rec }}">{{ rec }}</option>
+    {% endfor %}
+</select><br>
+<input type="submit" value="modify">
+</form>
+
+</body>
+</html>
